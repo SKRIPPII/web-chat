@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+  <table border="1">
+    <tr>
+      <th>Friends_ID</th>
+      <th>ID_Person</th>
+      <th>Login</th>
+    </tr>
+    <tr  th:each="person:${friends}">
+      <td th:text="${person.getFriend_id()}"></td>
+      <td th:text="${person.getPerson().getId()}"></td>
+      <td th:text="${person.getLogin()}"></td>
+    </tr>
+  </table>
+</div>
+</body>
+</html>

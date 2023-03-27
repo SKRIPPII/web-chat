@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Пользователи</title>
+    <link rel="stylesheet" th:href="@{/css/showUsers.css}">
+</head>
+<body>
+<main>
+    <div class="form-container-users">
+        <h1 class="form-title">Пользователи</h1>
+            <div class="form-people" th:each="person:${people}">
+                <div class="form-person">
+                    <div class="circle-person">
+                  <h1 class="form-title-info" th:text="${person.getName()}"></h1>
+                    </div>
+                      <form th:method="post" th:action="@{/auth/add/{login}(login=${person.getLogin()})}">
+                        <input class="button" type="submit" value="Добавить">
+                      </form>
+                </div>
+                <hr/>
+            </div>
+
+    </div>
+</main>
+</body>
+</html>
